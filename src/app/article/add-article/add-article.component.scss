@@ -1,0 +1,22 @@
+  
+ 
+ .image-upload-container {
+    cursor: pointer;
+  }
+  
+  .img-preview-container {
+    
+    position: relative;
+  
+    .img-preview {
+      background: center no-repeat;
+      background-size: contain;
+      height: 512px;
+      width: 51s2px;
+  
+      &-error {
+        display: none;
+      }
+    }
+  }
+  

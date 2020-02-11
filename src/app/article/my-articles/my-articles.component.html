@@ -1,0 +1,52 @@
+                        
+            
+                        <div class="header-search">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                            <input [(ngModel)]="searchText" (keyup)="filterTableau()" >
+                        </div>
+                  
+            <div class="container">
+                &nbsp;<br><br>
+            
+                 
+                <br><br>                                  
+                                              <div  *ngFor="let article of filterTab; let i=index">
+                                                   <div  class="col-lg-4 col-md-8 offset-lg-0 offset-md-2">   
+                                                    <span>{{article.title }}</span><br>
+                                                    <span>{{article.content }}</span><br>
+                                                    <span>{{article.owner }}</span><br>
+                                                    <img src="{{article.image}}">
+                                                    <button [routerLink]="['/ListArticles']" (click)="deleteArticle(i)">Delete</button>   
+                                                    <button  [routerLink]="['/UpdateArticle',i]" routerLinkActive="active">Update</button>
+                                                   
+                                                       <form [formGroup]="CommentForm"   >
+                                                        <input  type="text" formControlName="content"   ><br> 
+                                                        <input formControlName="article"  type="text" value={{article.title}} >
+                                                        <button (click)="addComment()">Ajouter Commentaire</button><br>
+          
+                                                      </form>
+          
+            <!--User
+             <input formControlName="user" type="text">  --> 
+            
+            <!-- Article<br>
+             <input  formControlName="article"  type="text"  > -->
+            
+            
+           
+           
+          </div>
+                                           
+                                                </div>
+                      
+                                 
+
+            </div>
+            
+           
+          
+              
+            
+          
+      
+          

@@ -1,0 +1,42 @@
+
+<section class="contact-section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="contact-form-warp" class="text-center">
+          <h2>  Add Article</h2><br><br>
+
+<form [formGroup]="profileForm" class="contact-form">
+   <input  type="text" formControlName="title" required placeholder="Title"><br> 
+  <br>
+  <br>
+  <ckeditor formControlName="content" required ></ckeditor>
+<br> 
+ <label class="image-upload-container">
+  
+  <input #imageInput  type="file"  (change)="onFileChange($event)">
+  </label><br><br>
+  <div *ngIf="selectedFile" class="img-preview-container">
+      <div class="img-preview"
+          [ngStyle]="{'background-image':'url('+selectedFile.src+')'}">
+      </div>
+  </div> 
+  <br>
+  <br>
+ 
+  <form [formGroup]="form">
+   
+  </form>
+
+    <br><br>
+ <button class="site-btn" (click)="addArticle()">Create</button>
+</form>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+

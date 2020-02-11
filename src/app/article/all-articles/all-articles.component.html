@@ -1,0 +1,35 @@
+<div class="header-search">
+  <a href="#"><i class="fa fa-search"></i></a>
+  <input [(ngModel)]="searchText" (keyup)="filterTableau()" placeholder="search ">
+</div>
+
+<section class="recipes-section spad pt-0">
+  <div class="container">
+    <div class="section-title">
+      <h2>Articles</h2>
+
+    </div>
+
+    <div *ngFor="let article of filterTab; let i=index">
+      <div class="col-lg-4 col-md-6">
+        <div class="recipe">
+          <img src="{{article.image}}" alt="">
+          <div class="recipe-info-warp">
+            <div class="recipe-info">
+              {{article.title }} <br>
+              {{article.content }}<br>
+             <!--{{article.owner }}<br><br><br> --> 
+              <span class="glyphicon glyphicon-remove" [routerLink]="['Articles/ListArticles']"
+                (click)="deleteArticle(i)">Delete</span> &nbsp; &nbsp; &nbsp;
+              <span class="glyphicon glyphicon-pencil" [routerLink]="['UpdateArticle',i]"
+                routerLinkActive="active">Update</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>

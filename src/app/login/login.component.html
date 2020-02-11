@@ -1,0 +1,27 @@
+
+<section class="contact-section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="contact-form-warp" class="text-center">
+         <h2>  Connexion </h2><br><br>
+          <form [formGroup]="profileForm" (ngSubmit)="login()" class="comment-form">
+            <input formControlName="username" type="text" placeholder="Username"><br><br>
+                  <label *ngIf="profileForm.hasError('username', 'required')">Username is required</label>
+             
+                   <input  formControlName="password"  type="password"  placeholder="Password"><br>
+                   <label *ngIf="profileForm.hasError('minlength', 'password')">Password should have at least 8 characters</label>
+                  
+                   <div [ngStyle]="{'color': 'red'}"><h4>{{msgError}}</h4></div>
+           
+                   <button class="site-btn" (click)="login()">Login</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  
+  </div>
+</section>
+
+
